@@ -1,4 +1,4 @@
-class TreeNode:
+class Nodes:
     def __init__(self, value, left=None, right=None, parent=None):
         self.value = value
         self.left = left
@@ -28,18 +28,18 @@ def in_order_successor(root, target):
 
     return target.parent
 
-root = TreeNode(10)
-root.left = TreeNode(5)
+root = Nodes(10)
+root.left = Nodes(5)
 root.left.parent = root
-root.right = TreeNode(15)
+root.right = Nodes(15)
 root.right.parent = root
-root.left.left = TreeNode(3)
+root.left.left = Nodes(3)
 root.left.left.parent = root.left
-root.left.right = TreeNode(7)
+root.left.right = Nodes(7)
 root.left.right.parent = root.left
-root.right.right = TreeNode(20)
+root.right.right = Nodes(20)
 root.right.right.parent = root.right
-root.right.right.left = TreeNode(12)
+root.right.right.left = Nodes(12)
 root.right.right.left.parent = root.right.right
 
 target_node = root.left.left 
@@ -47,6 +47,6 @@ target_node = root.left.left
 successor = in_order_successor(root, target_node)
 
 if successor:
-    print("In-order successor of the target node is:", successor.value)
+    print("In-order successor of the target node - true :", successor.value)
 else:
-    print("Target node does not have an in-order successor.")
+    print("Target have an in-order successor - false.")
